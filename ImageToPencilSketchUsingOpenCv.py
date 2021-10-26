@@ -10,21 +10,28 @@
 pip install opencv-python
 
 
-# In[4]:
+# In[3]:
 
 
 #command to import openCV library class so that inbuilt fxn can be exposed
 import cv2
 
 
-# In[8]:
+# In[10]:
+
+
+#We will need to check the directory in which our source image will be kept and hence importing OS ilb
+import os
+
+
+# In[11]:
 
 
 #Checking the current working directoy so that a sample pic can be placed there for operations
 pwd
 
 
-# In[10]:
+# In[12]:
 
 
 #imread is to read the image
@@ -48,7 +55,7 @@ cv2.waitKey(5000)
 cv2.destroyAllWindows()
 
 
-# In[18]:
+# In[14]:
 
 
 gray_image=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
@@ -57,7 +64,7 @@ cv2.waitKey(5000)
 cv2.destroyAllWindows()
 
 
-# In[21]:
+# In[15]:
 
 
 inverted_image=255-gray_image
@@ -66,13 +73,13 @@ cv2.waitKey(5000)
 cv2.destroyAllWindows()
 
 
-# In[22]:
+# In[16]:
 
 
 blurred = cv2.GaussianBlur(inverted_image,(21,21),0)
 
 
-# In[24]:
+# In[17]:
 
 
 inverted_blurred=255-blurred
@@ -82,16 +89,11 @@ cv2.waitKey(5000)
 cv2.destroyAllWindows()
 
 
-# In[26]:
+# In[19]:
 
 
 cv2.imshow("Original Pic",img)
 cv2.imshow("Pencil Sketch",pencil_sketch)
 cv2.waitKey(5000)
-
-
-# In[27]:
-
-
 cv2.destroyAllWindows()
 
